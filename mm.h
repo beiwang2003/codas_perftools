@@ -32,7 +32,6 @@ __attribute__((noinline)) void compute_naive(double **A, double **B, double **C,
 __attribute__((noinline)) void compute_interchange(double **A, double **B, double **C, int matrix_size) {
   for (int i = 0 ; i < matrix_size; i++) {
     for (int k = 0; k < matrix_size; k++) {
-#pragma omp simd 
       for (int j = 0;  j < matrix_size; j++) {
 	C[i][j] += A[i][k] * B[k][j];
       }
